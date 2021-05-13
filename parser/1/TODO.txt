@@ -1,0 +1,4 @@
+if(!collide_point( х , у ) )
+	Clock()#place image back
+https://kivy.org/doc/stable/api-kivy.uix.scatter.html
+https://kivy.org/doc/stable/api-kivy.clock.html

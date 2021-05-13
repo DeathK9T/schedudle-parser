@@ -1,0 +1,69 @@
+<RV>:
+    viewclass: 'Image'
+    RecycleBoxLayout:
+        spacing: 5
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, .1
+            Button:
+                disabled: True
+                background_normal: ''
+                background_color: .35, .35, .35, 1
+                text: "Go to main screen"
+            Button:
+                background_normal: ''
+                background_color: .35, .35, .35, 1
+                text: "Go to second screen"
+                on_release:
+                    root.go_to_second()
+        Label:
+            size_hint: 1, .9
+            text: "Hello"
+
+<SecondScreen>:
+    #scatter: scatter
+    BoxLayout:
+        orientation: 'vertical' 
+        BoxLayout:
+            orientatio: 'horizontal'
+            size_hint:1,.1
+            Button:
+                background_normal: ''
+                background_color: .35, .35, .35, 1
+                text: 'Go to main screen'
+                on_release:
+                    root.go_to_main()
+            Button:
+                disabled: True
+                background_normal: ''
+                background_color: .35, .35, .35, 1
+                text: 'Go to second screen'
+        FloatLayout:
+            size_hint: 1,.9
+            Image:
+                allow_stretch: True
+                keep_ratio: False
+                source: 'out0.jpg'
+        #ScatterLayout:
+            #id: scatter
+            #size_hint:1,.9
+            #do_translation: False
+            #do_rotation: False
+            #scale_min: 1
+            #scale_max: 2
+            #Image:
+                #allow_stretch: True
+                #keep_ratio: False
+                #source: 'out0.jpg'
+            #Image:
+                #allow_stretch: True
+                #keep_ratio: False
+                #source: 'out1.jpg'

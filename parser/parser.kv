@@ -1,0 +1,129 @@
+<GroupButton>:
+	background_normal: ''
+	background_color: .35, .35, .35, 1
+	on_release:
+        root.GoToGroupPage()
+
+<RV>:
+	viewclass: 'GroupButton'
+	RecycleBoxLayout:
+		spacing: 5
+		default_size: None, dp(56)
+		default_size_hint: 1, None
+		size_hint_y: None
+		height: self.minimum_height
+		orientation: 'vertical'
+
+<MainWindow>:
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: 20
+		padding: 10
+		Label:
+			size_hint: 1, .9
+			text: 'Hello'
+		BoxLayout:
+			size_hint: 1, .1
+			Button:
+				disabled: True
+				#size_hint: .5, .5
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: "Go to main page"
+			Button:
+				#size_hint: .5, .5
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: "Go to selection page"
+				on_release:
+					root.GoToSelectionPage()
+
+<SelectionWindow>:
+	BoxLayout:
+		spacing: 20
+		padding: 10
+		orientation: "vertical"
+		AnchorLayout:
+			size_hint: 1, .9
+			RV:
+		BoxLayout:
+			size_hint: 1, .1
+			Button:
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: "Go to main page"
+				on_release:
+					root.GoToMainPage()
+			Button:
+				disabled: True
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: "Go to selection page"
+
+<GroupWindow>:
+	groupNameLabel: groupName
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: 20
+		padding: 10
+		Label:
+			id: groupName
+			size_hint: 1, .1
+			text: root.GroupName
+		BoxLayout:
+			orientation: 'vertical'
+			spacing: 20
+			padding: 10
+			size_hint: 1, .8
+			Button:
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: 'Go to const schedule'
+				on_release:
+					root.GoToConstSchedule()
+			Button:
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: 'Go to schedule'
+				on_realease:
+					root.GoToSchedule()
+			Button:
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: 'test #2'
+			Button:
+				background_normal: ''
+				background_color: .35, .35, .35, 1
+				text: 'test #3'
+		Button:
+			size_hint: 1, .1
+			background_normal: ''
+			background_color: .35, .35, .35, 1
+			text: "Go to selection page"
+			on_release:
+				root.GoToSelectionPage()
+
+<ConstSchedule>:
+	img_0:image_0
+	img_1:image_1
+	BoxLayout:
+		orientation: 'vertical'
+		spacing: 20
+		padding: 10
+		Image:
+			id:image_0
+			size_hint:1,.45
+			allow_stretch: True
+			source: 'out0.jpg'
+		Image:
+			id:image_1
+			size_hint:1,.45
+			allow_stretch: True
+			source: 'out1.jpg'
+		Button:
+			size_hint: 1, .1
+			background_normal: ''
+			background_color: .35, .35, .35, 1
+			text: "Go to group page"
+			on_release:
+				root.GoToMainPage()
